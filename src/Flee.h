@@ -7,5 +7,5 @@ class Flee :
 public:
 	Flee();
 	~Flee();
-	Vector2D calculateSteeringForce(Agent *agent, float dtime);
+	Vector2D calculateSteeringForce(Agent* agent, float dtime);
 };

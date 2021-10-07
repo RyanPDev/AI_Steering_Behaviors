@@ -7,17 +7,16 @@
 #include "SceneFlee.h"
 #include "SceneSeekFlee.h"
 
-
 using namespace std;
 
-int main(int argc, char ** argv)
+int main(int argc, char** argv)
 {
 	bool quit = false;
 	SDL_Event event;
 
-	SDL_SimpleApp *app = SDL_SimpleApp::Instance();
+	SDL_SimpleApp* app = SDL_SimpleApp::Instance();
 
-	Scene *curr_scene = new SceneSeek;
+	Scene* curr_scene = new SceneSeek;
 	app->setWindowTitle(curr_scene->getTitle());
 
 	while (!quit)

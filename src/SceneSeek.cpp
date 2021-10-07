@@ -5,9 +5,9 @@ using namespace std;
 
 SceneSeek::SceneSeek()
 {
-	Agent *agent = new Agent;
+	Agent* agent = new Agent;
 	agent->setBehavior(new Seek);
-	agent->setPosition(Vector2D(640,360));
+	agent->setPosition(Vector2D(640, 360));
 	agent->setTarget(Vector2D(640, 360));
 	agent->loadSpriteTexture("../res/soldier.png", 4);
 	agents.push_back(agent);
@@ -22,7 +22,7 @@ SceneSeek::~SceneSeek()
 	}
 }
 
-void SceneSeek::update(float dtime, SDL_Event *event)
+void SceneSeek::update(float dtime, SDL_Event* event)
 {
 	/* Keyboard & Mouse events */
 	switch (event->type) {
@@ -37,7 +37,7 @@ void SceneSeek::update(float dtime, SDL_Event *event)
 	default:
 		break;
 	}
-	agents[0]->update(dtime,event);
+	agents[0]->update(dtime, event);
 }
 
 void SceneSeek::draw()

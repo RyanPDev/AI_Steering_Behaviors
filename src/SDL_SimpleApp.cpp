@@ -2,9 +2,9 @@
 
 using namespace std;
 
-SDL_SimpleApp * SDL_SimpleApp::s_pInstance = 0;
+SDL_SimpleApp* SDL_SimpleApp::s_pInstance = 0;
 
-SDL_SimpleApp * SDL_SimpleApp::Instance()
+SDL_SimpleApp* SDL_SimpleApp::Instance()
 {
 	if (s_pInstance == 0)
 	{
@@ -21,7 +21,7 @@ SDL_SimpleApp::SDL_SimpleApp()
 
 	SDL_Init(SDL_INIT_VIDEO);
 
-	if ((IMG_Init(IMG_INIT_PNG)&IMG_INIT_PNG) != IMG_INIT_PNG) {
+	if ((IMG_Init(IMG_INIT_PNG) & IMG_INIT_PNG) != IMG_INIT_PNG) {
 		cout << "IMG_Init: Failed to init required img support!" << endl;
 		cout << "IMG_Init: " << IMG_GetError() << endl;
 	}
@@ -50,7 +50,7 @@ SDL_SimpleApp::~SDL_SimpleApp()
 	SDL_Quit();
 }
 
-SDL_Event SDL_SimpleApp::run(Scene *scene)
+SDL_Event SDL_SimpleApp::run(Scene* scene)
 {
 	SDL_Event event;
 	SDL_PollEvent(&event);
@@ -65,7 +65,7 @@ SDL_Event SDL_SimpleApp::run(Scene *scene)
 	last_update = (float)SDL_GetTicks();
 	SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255); //TODO set bg color
 	SDL_RenderClear(renderer);
-	scene->update(dtime,&event);
+	scene->update(dtime, &event);
 	scene->draw();
 	SDL_RenderPresent(renderer);
 	return event;
@@ -76,7 +76,7 @@ Vector2D SDL_SimpleApp::getWinSize()
 	return Vector2D((float)win_width, (float)win_height);
 }
 
-void SDL_SimpleApp::setWindowTitle(const char *title)
+void SDL_SimpleApp::setWindowTitle(const char* title)
 {
 	SDL_SetWindowTitle(window, title);
 }

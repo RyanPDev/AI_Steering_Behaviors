@@ -6,17 +6,17 @@ using namespace std;
 
 SceneSeekFlee::SceneSeekFlee()
 {
-	Agent *agent = new Agent;
+	Agent* agent = new Agent;
 	agent->setBehavior(new Seek);
 	agent->setTarget(Vector2D(100, 100));
 	agent->loadSpriteTexture("../res/zombie1.png", 8);
 	agents.push_back(agent);
 	agent = new Agent();
 	agent->setBehavior(new Flee);
-	agent->setPosition(Vector2D(600,50));
+	agent->setPosition(Vector2D(600, 50));
 	agent->setTarget(Vector2D(900, 650));
 	agent->loadSpriteTexture("../res/soldier.png", 4);
-	agents.push_back(agent); 
+	agents.push_back(agent);
 	target = Vector2D(100, 100);
 }
 
@@ -28,7 +28,7 @@ SceneSeekFlee::~SceneSeekFlee()
 	}
 }
 
-void SceneSeekFlee::update(float dtime, SDL_Event *event)
+void SceneSeekFlee::update(float dtime, SDL_Event* event)
 {
 	/* Keyboard & Mouse events */
 	switch (event->type) {
@@ -47,7 +47,7 @@ void SceneSeekFlee::update(float dtime, SDL_Event *event)
 	{
 		agents[i]->update(dtime, event);
 	}
-	
+
 }
 
 void SceneSeekFlee::draw()

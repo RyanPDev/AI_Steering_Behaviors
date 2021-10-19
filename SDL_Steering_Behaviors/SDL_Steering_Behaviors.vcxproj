@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\Agent.cpp" />
     <ClCompile Include="..\src\Flee.cpp" />
+    <ClCompile Include="..\src\Guide.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\SceneFlee.cpp" />
     <ClCompile Include="..\src\SceneSeekFlee.cpp" />

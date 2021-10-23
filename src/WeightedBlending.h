@@ -10,8 +10,10 @@ private:
 	std::map<Agent::SteeringBehavior*, float> mSteeringBehaviors;
 
 public:
-	WeightedBlending(std::map<Agent::SteeringBehavior*, float>);
+	WeightedBlending();
 	~WeightedBlending();
+
+	void Append(Agent::SteeringBehavior*, float);
 
 	Vector2D calculateSteeringForce(Agent* agent, float dtime);
 };

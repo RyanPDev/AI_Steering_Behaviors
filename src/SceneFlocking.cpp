@@ -1,12 +1,14 @@
 #include "SceneFlocking.h"
-#include "SteeringPriority.h"
 
 SceneFlocking::SceneFlocking() :numAgents(10)
 {
+	wBlending.Append(new Seek, 0.2f);
+	wBlending.Append(new Flee, 0.2f);
+
 	for (int i = 0; i < numAgents; i++)
 	{
 		Agent* agent = new Agent;
-		agent->setBehavior(new SteeringPriority);
+		agent->setBehavior(&wBlending);
 		agent->setPosition(Vector2D(1 + std::rand() / ((RAND_MAX + 1u) / 1280), (1 + std::rand() / ((RAND_MAX + 1u) / 768))));
 		agent->setTarget(Vector2D(640, 360));
 		agent->loadSpriteTexture("../res/soldier.png", 4);
@@ -34,13 +36,14 @@ void SceneFlocking::update(float dtime, SDL_Event* event)
 		{
 			target = Vector2D((float)(event->button.x), (float)(event->button.y));
 			for (int i = 0; i < (int)agents.size(); i++)
-				agents[0]->setTarget(target);
+				agents[i]->setTarget(target);
 		}
 		break;
 	default:
 		break;
 	}
-	agents[0]->update(dtime, event);
+	for (int i = 0; i < (int)agents.size(); i++)
+		agents[i]->update(dtime, event);
 }
 
 void SceneFlocking::draw()

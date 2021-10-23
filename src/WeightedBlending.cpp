@@ -1,11 +1,16 @@
 #include "WeightedBlending.h"
 
-WeightedBlending::WeightedBlending(std::map<Agent::SteeringBehavior*, float>)
+WeightedBlending::WeightedBlending()
 {
+	
 }
 
 WeightedBlending::~WeightedBlending()
 {
+}
+void WeightedBlending::Append(Agent::SteeringBehavior* behavior, float weight)
+{
+	mSteeringBehaviors.insert(std::pair<SteeringBehavior*, float>(behavior, weight));
 }
 
 Vector2D WeightedBlending::calculateSteeringForce(Agent* agent, float dtime)

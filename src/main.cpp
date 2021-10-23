@@ -15,7 +15,6 @@ int main(int argc, char** argv)
 	std::srand(std::time(nullptr));
 	bool quit = false;
 	SDL_Event event;
-
 	SDL_SimpleApp* app = SDL_SimpleApp::Instance();
 
 	Scene* curr_scene = new SceneSeek;

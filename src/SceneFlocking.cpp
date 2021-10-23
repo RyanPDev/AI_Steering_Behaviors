@@ -2,8 +2,8 @@
 
 SceneFlocking::SceneFlocking() :numAgents(10)
 {
-	wBlending.Append(new Seek, 0.2f);
-	wBlending.Append(new Flee, 0.2f);
+	wBlending.Append(new Seek, .8f);
+	wBlending.Append(new Flee, .2f);
 
 	for (int i = 0; i < numAgents; i++)
 	{

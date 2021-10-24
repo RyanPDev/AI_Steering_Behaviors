@@ -20,7 +20,6 @@ SceneSeek::~SceneSeek()
     {
         delete agents[i];
     }
-    agents.clear();
 }
 
 

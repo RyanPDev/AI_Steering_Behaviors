@@ -17,8 +17,12 @@ Vector2D Separation::calculateSteeringForce(Agent* agent, float dtime)
 	else
 	{
 		for (Agent* a : agent->nearbyAgents)
-			desiredVelocity += agent->getPosition() - a->getPosition();
+		{
+			
+			if(getDistance(agent->getPosition(),a->getPosition()) < 70)
+				desiredVelocity += agent->getPosition() - a->getPosition();
 
+		}
 		desiredVelocity /= agent->nearbyAgents.size();
 
 		desiredVelocity.Normalize();

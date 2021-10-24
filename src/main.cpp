@@ -17,7 +17,7 @@ int main(int argc, char** argv)
 	SDL_Event event;
 	SDL_SimpleApp* app = SDL_SimpleApp::Instance();
 
-	Scene* curr_scene = new SceneSeek;
+	Scene* curr_scene = new SceneFlocking;
 	app->setWindowTitle(curr_scene->getTitle());
 
 	while (!quit)
@@ -31,25 +31,26 @@ int main(int argc, char** argv)
 		case SDL_KEYDOWN:
 			switch (event.key.keysym.scancode)
 			{
-			case SDL_SCANCODE_1:
-				delete(curr_scene);
-				curr_scene = new SceneSeek;
-				app->setWindowTitle(curr_scene->getTitle());
-				break;
-			case SDL_SCANCODE_2:
-				delete(curr_scene);
-				curr_scene = new SceneFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-				break;
-			case SDL_SCANCODE_3:
-				delete(curr_scene);
-				curr_scene = new SceneSeekFlee;
-				app->setWindowTitle(curr_scene->getTitle());
-			case SDL_SCANCODE_4:
-				delete(curr_scene);
-				curr_scene = new SceneFlocking;
-				app->setWindowTitle(curr_scene->getTitle());
-				break;
+			
+			//case SDL_SCANCODE_1:
+			//	delete(curr_scene);
+			//	curr_scene = new SceneSeek;
+			//	app->setWindowTitle(curr_scene->getTitle());
+			//	break;
+			//case SDL_SCANCODE_2:
+			//	delete(curr_scene);
+			//	curr_scene = new SceneFlee;
+			//	app->setWindowTitle(curr_scene->getTitle());
+			//	break;
+			//case SDL_SCANCODE_3:
+			//	delete(curr_scene);
+			//	curr_scene = new SceneSeekFlee;
+			//	app->setWindowTitle(curr_scene->getTitle());
+			//case SDL_SCANCODE_4:
+			//	delete(curr_scene);
+			//	curr_scene = new SceneFlocking;
+			//	app->setWindowTitle(curr_scene->getTitle());
+			//	break;
 			case SDL_SCANCODE_Q:
 			case SDL_SCANCODE_ESCAPE:
 				quit = true;

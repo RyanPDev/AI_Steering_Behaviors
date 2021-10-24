@@ -6,7 +6,7 @@ Agent::Agent() : sprite_texture(0),
 position(Vector2D(100, 100)),
 target(Vector2D(1000, 100)),
 velocity(Vector2D(0, 0)),
-mass(0.01),
+mass(0.02),
 speed(0.5),
 max_force(5),
 max_velocity(200),
@@ -113,8 +113,7 @@ void Agent::GetNearbyAgents(std::vector<Agent*> agents, float radius)
 {
 	nearbyAgents.clear();
 	for (Agent* a : agents)
-		if (position != a->position
-			&& getDistance(position, a->position) <= radius)
+		if (position != a->position && getDistance(position, a->position) <= radius)
 				nearbyAgents.push_back(a);
 }
 

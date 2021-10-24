@@ -1,12 +1,12 @@
 #include "SceneFlocking.h"
 
-SceneFlocking::SceneFlocking() :NUM_AGENTS(50), RADIUS(150)
+SceneFlocking::SceneFlocking() :NUM_AGENTS(50), RADIUS(350)
 {
-	//wBlending.Append(new Seek, .1f);
-	//wBlending.Append(new Flee, .1f);
+	wBlending.Append(new Seek, 0.f);
+	wBlending.Append(new Flee, 0.f);
 	wBlending.Append(new Separation, 0.4f);
 	wBlending.Append(new Alignment, 0.3f);
-	wBlending.Append(new Cohesion, .2f);
+	wBlending.Append(new Cohesion, 0.3f);
 
 	for (int i = 0; i < NUM_AGENTS; i++)
 	{
@@ -26,7 +26,6 @@ SceneFlocking::~SceneFlocking()
 	{
 		delete agents[i];
 	}
-	agents.clear();
 }
 
 void SceneFlocking::update(float dtime, SDL_Event* event)

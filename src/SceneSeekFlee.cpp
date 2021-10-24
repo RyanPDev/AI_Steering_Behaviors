@@ -26,7 +26,6 @@ SceneSeekFlee::~SceneSeekFlee()
 	{
 		delete agents[i];
 	}
-	agents.clear();
 }
 
 void SceneSeekFlee::update(float dtime, SDL_Event* event)

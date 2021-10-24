@@ -22,12 +22,5 @@ Vector2D WeightedBlending::calculateSteeringForce(Agent* agent, float dtime)
 		steeringForce_total += it->first->calculateSteeringForce(agent, dtime) * it->second;
 	}
 
-	//	Vector2D acceleration = steeringForce_total / agent->getMass();
-	//	speed += acceleration * dtime;
-	//	if (speed.Length() > agent->getMaxVelocity())
-	//	{
-	//		speed = speed.Normalize() * agent->getMaxVelocity();
-	//	}
-
 	return steeringForce_total * agent->getMaxForce();
 }

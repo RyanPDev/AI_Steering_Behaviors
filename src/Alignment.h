@@ -9,5 +9,5 @@ private:
 public:
     Alignment();
     ~Alignment();
-    Vector2D calculateSteeringForce(Agent* agent, float dtime);
+    Vector2D calculateSteeringForce(Agent* agent, float);
 };

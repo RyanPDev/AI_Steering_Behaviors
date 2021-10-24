@@ -32,11 +32,6 @@ Agent::~Agent()
 	}
 	nearbyAgents.clear();
 }
-//for (int i = 0; i < nearbyAgents.size(); i++)
-	//{
-	//	delete nearbyAgents[i];
-	//}
-	//nearbyAgents.clear();
 
 void Agent::setBehavior(SteeringBehavior* behavior)
 {
@@ -90,9 +85,6 @@ void Agent::setVelocity(Vector2D _velocity)
 
 void Agent::update(float dtime, SDL_Event* event)
 {
-
-	//cout << "agent update:" << endl;
-
 	switch (event->type) {
 		/* Keyboard & Mouse events */
 	case SDL_KEYDOWN:

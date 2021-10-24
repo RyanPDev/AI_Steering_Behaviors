@@ -8,7 +8,7 @@ Alignment::~Alignment()
 {
 }
 
-Vector2D Alignment::calculateSteeringForce(Agent* agent, float dtime)
+Vector2D Alignment::calculateSteeringForce(Agent* agent, float)
 {
 	Vector2D averageVelocity;
 	if (agent->nearbyAgents.empty())

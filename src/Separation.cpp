@@ -9,6 +9,7 @@ Separation::~Separation()
 {
 
 }
+
 Vector2D Separation::calculateSteeringForce(Agent* agent, float dtime)
 {
 	Vector2D desiredVelocity;

@@ -22,9 +22,21 @@ Agent::~Agent()
 {
 	if (sprite_texture)
 		SDL_DestroyTexture(sprite_texture);
+
 	if (steering_behaviour)
 		delete (steering_behaviour);
+
+	for (int i = 0; i < nearbyAgents.size(); i++)
+	{
+		delete nearbyAgents[i];
+	}
+	nearbyAgents.clear();
 }
+//for (int i = 0; i < nearbyAgents.size(); i++)
+	//{
+	//	delete nearbyAgents[i];
+	//}
+	//nearbyAgents.clear();
 
 void Agent::setBehavior(SteeringBehavior* behavior)
 {
@@ -103,6 +115,19 @@ void Agent::update(float dtime, SDL_Event* event)
 	if (position.y < 0) position.y = TheApp::Instance()->getWinSize().y;
 	if (position.x > TheApp::Instance()->getWinSize().x) position.x = 0;
 	if (position.y > TheApp::Instance()->getWinSize().y) position.y = 0;
+}
+
+void Agent::GetNearbyAgents(std::vector<Agent*> agents, float radius)
+{
+	std::cout << "h: "<< sprite_h << " w: " << sprite_w;
+	nearbyAgents.clear();
+	for (Agent* a : agents)
+	{
+		if (getDistance(position, a->position) <= radius)
+		{
+			nearbyAgents.push_back(a);
+		}
+	}
 }
 
 void Agent::draw()

@@ -20,6 +20,7 @@ SceneFlee::~SceneFlee()
 	{
 		delete agents[i];
 	}
+	agents.clear();
 }
 
 void SceneFlee::update(float dtime, SDL_Event* event)

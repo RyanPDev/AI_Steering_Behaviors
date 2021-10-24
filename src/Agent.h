@@ -4,7 +4,7 @@
 #include <SDL.h>
 #include <SDL_image.h>
 #include "SDL_SimpleApp.h"
-#include "Vector2D.h"
+#include <vector>
 #include "utils.h"
 
 
@@ -46,6 +46,7 @@ private:
 	int sprite_h;
 
 public:
+	std::vector<Agent*> nearbyAgents;
 	Agent();
 	~Agent();
 	Vector2D getPosition();
@@ -61,5 +62,5 @@ public:
 	void update(float dtime, SDL_Event* event);
 	void draw();
 	bool Agent::loadSpriteTexture(char* filename, int num_frames = 1);
-
+	void Agent::GetNearbyAgents(std::vector<Agent*>, float);
 };

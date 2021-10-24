@@ -6,7 +6,9 @@
 #include "Seek.h"
 #include "Flee.h"
 #include "SteeringPriority.h"
-
+#include "Separation.h"
+#include "Alignment.h"
+#include "Cohesion.h"
 
 class SceneFlocking :
 	public Scene
@@ -15,7 +17,8 @@ private:
 	std::vector<Agent*> agents;
 	WeightedBlending wBlending;
 	Vector2D target;
-	int numAgents;
+	const int NUM_AGENTS;
+	const float RADIUS;
 public:
 	SceneFlocking();
 	~SceneFlocking();

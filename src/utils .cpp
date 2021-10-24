@@ -1,11 +1,10 @@
 #pragma once
 
-#include <iostream>
-#include <string>
-#include <SDL.h>
+#include "utils.h"
+#include <math.h>
 
 /* Get the resource path for resources located in res/subDir */
-std::string getResourcePath(const std::string& subDir = "") {
+std::string getResourcePath(const std::string& subDir) {
 	//We need to choose the path separator properly based on which
 	//platform we're running on, since Windows uses a different
 	//separator than most systems
@@ -43,6 +42,7 @@ void set_pixel(SDL_Renderer* rend, int x, int y, Uint8 r, Uint8 g, Uint8 b, Uint
 {
 	SDL_SetRenderDrawColor(rend, r, g, b, a);
 	SDL_RenderDrawPoint(rend, x, y);
+	
 }
 
 void draw_circle(SDL_Renderer* surface, int n_cx, int n_cy, int rad, Uint8 r, Uint8 g, Uint8 b, Uint8 a)
@@ -92,4 +92,9 @@ void draw_circle(SDL_Renderer* surface, int n_cx, int n_cy, int rad, Uint8 r, Ui
 			}
 		}
 	}
+}
+
+float getDistance(Vector2D pos1, Vector2D pos2)
+{
+	return sqrt(pow((pos1.x-pos2.x),2)+ pow((pos1.y - pos2.y), 2));
 }

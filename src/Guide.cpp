@@ -5,7 +5,7 @@
 //		return sum
 //}
 //
-//WeightedBlending::calculateSteeringForce(...) {
+//priorityQueue::calculateSteeringForce(...) {
 //	for steering in steering_behabiors{
 //		f = steering.calculateSteeringForce()
 //		if f > THRESHOLD

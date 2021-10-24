@@ -119,15 +119,11 @@ void Agent::update(float dtime, SDL_Event* event)
 
 void Agent::GetNearbyAgents(std::vector<Agent*> agents, float radius)
 {
-	std::cout << "h: "<< sprite_h << " w: " << sprite_w;
 	nearbyAgents.clear();
 	for (Agent* a : agents)
-	{
-		if (getDistance(position, a->position) <= radius)
-		{
-			nearbyAgents.push_back(a);
-		}
-	}
+		if (position != a->position
+			&& getDistance(position, a->position) <= radius)
+				nearbyAgents.push_back(a);
 }
 
 void Agent::draw()

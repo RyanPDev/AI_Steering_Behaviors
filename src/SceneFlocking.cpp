@@ -2,9 +2,10 @@
 
 SceneFlocking::SceneFlocking() :NUM_AGENTS(10), RADIUS(90)
 {
-	wBlending.Append(new Seek, .3f);
-	//wBlending.Append(new Flee, .1f);
-	wBlending.Append(new Separation, 0.7f);
+	wBlending.Append(new Seek, .2f);
+	wBlending.Append(new Flee, .1f);
+	wBlending.Append(new Separation, 0.5f);
+	wBlending.Append(new Alignment, 0.2f);
 
 	for (int i = 0; i < NUM_AGENTS; i++)
 	{

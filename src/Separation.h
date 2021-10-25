@@ -5,6 +5,8 @@
 class Separation :
     public Agent::SteeringBehavior
 {  
+private:
+    const float SEPARATION_RANGE = 70;
 public:
     Separation();
     ~Separation();

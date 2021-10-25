@@ -16,6 +16,7 @@ class SceneFlocking :
 private:
 	std::vector<Agent*> agents;
 	WeightedBlending wBlending;
+	SteeringPriority pBlending;
 	Vector2D target;
 	const int NUM_AGENTS;
 	const float RADIUS;

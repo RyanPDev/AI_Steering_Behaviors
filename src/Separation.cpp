@@ -19,7 +19,7 @@ Vector2D Separation::calculateSteeringForce(Agent* agent, float dtime)
 		for (Agent* a : agent->nearbyAgents)
 		{
 			
-			if(getDistance(agent->getPosition(),a->getPosition()) < 70)
+			if(getDistance(agent->getPosition(),a->getPosition()) < SEPARATION_RANGE)
 				desiredVelocity += agent->getPosition() - a->getPosition();
 
 		}

@@ -8,10 +8,14 @@ SceneFlocking::SceneFlocking() :NUM_AGENTS(50), RADIUS(350)
 	wBlending.Append(new Alignment, 0.3f);
 	wBlending.Append(new Cohesion, 0.3f);
 
+	pBlending.Append(new Separation, 1);
+	pBlending.Append(new Seek, 2);
+
+
 	for (int i = 0; i < NUM_AGENTS; i++)
 	{
 		Agent* agent = new Agent;
-		agent->setBehavior(&wBlending);
+		agent->setBehavior(&pBlending);
 		agent->setPosition(Vector2D(1 + std::rand() / ((RAND_MAX + 1u) / 1280), (1 + std::rand() / ((RAND_MAX + 1u) / 768))));
 		agent->setTarget(Vector2D(640, 360));
 		agent->loadSpriteTexture("../res/soldier.png", 4);

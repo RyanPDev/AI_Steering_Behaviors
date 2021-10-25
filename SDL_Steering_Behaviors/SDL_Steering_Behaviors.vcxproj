@@ -138,10 +138,7 @@
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Obstacle.cpp" />
     <ClCompile Include="..\src\ObstacleAvoidance.cpp" />
-    <ClCompile Include="..\src\SceneFlee.cpp" />
     <ClCompile Include="..\src\SceneFlocking.cpp" />
-    <ClCompile Include="..\src\SceneSeekFlee.cpp" />
-    <ClCompile Include="..\src\SceneSeek.cpp" />
     <ClCompile Include="..\src\SDL_SimpleApp.cpp" />
     <ClCompile Include="..\src\Seek.cpp" />
     <ClCompile Include="..\src\Separation.cpp" />
@@ -161,9 +158,6 @@
     <ClInclude Include="..\src\SteeringPriority.h" />
     <ClInclude Include="..\src\utils.h" />
     <ClInclude Include="..\src\Scene.h" />
-    <ClInclude Include="..\src\SceneFlee.h" />
-    <ClInclude Include="..\src\SceneSeekFlee.h" />
-    <ClInclude Include="..\src\SceneSeek.h" />
     <ClInclude Include="..\src\SDL_SimpleApp.h" />
     <ClInclude Include="..\src\Seek.h" />
     <ClInclude Include="..\src\Vector2D.h" />

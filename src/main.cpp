@@ -3,9 +3,6 @@
 #include <SDL_image.h>
 #include <ctime>
 #include "SDL_SimpleApp.h"
-#include "SceneSeek.h"
-#include "SceneFlee.h"
-#include "SceneSeekFlee.h"
 #include "SceneFlocking.h"
 
 using namespace std;

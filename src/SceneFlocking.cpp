@@ -2,14 +2,18 @@
 
 SceneFlocking::SceneFlocking() :NUM_AGENTS(50), RADIUS(350)
 {
+
+	
+
+
 	wBlending.Append(new Seek, 0.f);
 	wBlending.Append(new Flee, 0.f);
 	wBlending.Append(new Separation, 0.4f);
 	wBlending.Append(new Alignment, 0.3f);
 	wBlending.Append(new Cohesion, 0.3f);
 
-	pBlending.Append(new Separation, 1);
-	pBlending.Append(new Seek, 2);
+	pBlending.Append(&wBlending, 1);
+	pBlending.Append(&obstacleAvoidanceSteering, 2);
 
 
 	for (int i = 0; i < NUM_AGENTS; i++)
@@ -59,8 +63,12 @@ void SceneFlocking::update(float dtime, SDL_Event* event)
 void SceneFlocking::draw()
 {
 	draw_circle(TheApp::Instance()->getRenderer(), (int)target.x, (int)target.y, 15, 255, 0, 0, 255);
+
 	for (int i = 0; i < (int)agents.size(); i++)
 		agents[i]->draw();
+
+	for (int i = 0; i < obstacleAvoidanceSteering.numObstacles; i++)
+		obstacleAvoidanceSteering.obstacles[i].Draw();
 }
 
 const char* SceneFlocking::getTitle()

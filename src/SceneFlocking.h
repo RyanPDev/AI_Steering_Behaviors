@@ -9,6 +9,8 @@
 #include "Separation.h"
 #include "Alignment.h"
 #include "Cohesion.h"
+#include "Obstacle.h"
+#include "ObstacleAvoidance.h"
 
 class SceneFlocking :
 	public Scene
@@ -16,7 +18,8 @@ class SceneFlocking :
 private:
 	std::vector<Agent*> agents;
 	WeightedBlending wBlending;
-	SteeringPriority pBlending;
+	SteeringPriority pBlending;	
+	ObstacleAvoidance obstacleAvoidanceSteering;
 	Vector2D target;
 	const int NUM_AGENTS;
 	const float RADIUS;

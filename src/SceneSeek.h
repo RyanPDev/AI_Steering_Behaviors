@@ -13,7 +13,7 @@ public:
 	void draw();
 	const char* getTitle();
 private:
-	std::vector<Agent*> agents;
+std::vector<Agent*> agents;
 	Vector2D target;
 };
 

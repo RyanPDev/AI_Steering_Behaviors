@@ -101,7 +101,7 @@ void Agent::update(float dtime, SDL_Event* event)
 	// Update orientation
 	if (velocity.Length())
 		orientation = (float)(atan2(velocity.y, velocity.x) * RAD2DEG);
-
+	
 	// Trim position values to window size
 	if (position.x < 0) position.x = TheApp::Instance()->getWinSize().x;
 	if (position.y < 0) position.y = TheApp::Instance()->getWinSize().y;

@@ -11,9 +11,11 @@
 class Agent
 {
 public:
+	const float agentRadius = 45;
 	class SteeringBehavior
 	{
 	public:
+		
 		SteeringBehavior() {};
 		virtual ~SteeringBehavior() {};
 		virtual Vector2D calculateSteeringForce(Agent* agent, float dtime) = 0;

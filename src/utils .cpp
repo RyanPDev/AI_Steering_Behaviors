@@ -97,8 +97,23 @@ void draw_circle(SDL_Renderer* surface, int n_cx, int n_cy, int rad, Uint8 r, Ui
 float getDistance(Vector2D pos1, Vector2D pos2)
 {
 	return sqrt(pow((pos1.x-pos2.x),2)+ pow((pos1.y - pos2.y), 2));
-}
+} 
 float getLenght(Vector2D v)
 {
 	return sqrt(pow((v.x + v.y), 2));
+}
+
+void draw_line(SDL_Renderer* surface, int iX, int iY, int fX, int fY)
+{
+	SDL_RenderDrawLine(surface, iX, iY, fX, fY);
+}
+Vector2D getPerpendicularVector(Vector2D v, bool clockWise)
+{
+	if (clockWise)
+		return Vector2D(v.y,-v.x);
+	else
+		return Vector2D(-v.y,v.x);
+
+	
+	
 }

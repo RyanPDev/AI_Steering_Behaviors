@@ -2,12 +2,8 @@
 
 SceneFlocking::SceneFlocking() :NUM_AGENTS(50), RADIUS(350)
 {
-
-	
-
-
-	wBlending.Append(new Seek, 0.f);
-	wBlending.Append(new Flee, 0.f);
+	wBlending.Append(new Seek, 0.f);	// If you want to implement them just change the value (breaks the flocking)
+	wBlending.Append(new Flee, 0.f);	// If you want to implement them just change the value (breaks the flocking)
 	wBlending.Append(new Separation, 0.4f);
 	wBlending.Append(new Alignment, 0.3f);
 	wBlending.Append(new Cohesion, 0.3f);

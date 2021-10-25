@@ -10,10 +10,6 @@ SteeringPriority::~SteeringPriority()
 void SteeringPriority::Append(Agent::SteeringBehavior* behavior, int priority)
 {
 	pq.push(std::make_pair(priority, behavior));
-	
-	
-		//push(std::make_pair(priority, behavior));
-	//mSteeringBehaviors.insert(std::pair<SteeringBehavior*, float>(behavior, priority));
 }
 
 Vector2D SteeringPriority::calculateSteeringForce(Agent* agent, float dtime)

@@ -16,7 +16,6 @@ ObstacleAvoidance::~ObstacleAvoidance()
 }
 Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
 {
-	// 45 is +- half the size of the sprite
 	Vector2D target = rayCast(agent->getPosition(),rDistance,agent->getVelocity(), rCheckrate);
 	if (target == Vector2D{ 0 })
 	{
@@ -41,7 +40,6 @@ Vector2D ObstacleAvoidance::calculateSteeringForce(Agent* agent, float dtime)
 Vector2D ObstacleAvoidance::rayCast(Vector2D posI, float distance, Vector2D dir, float checkDistance)
 {
 	dir.Normalize();
-	//draw_line(TheApp::Instance()->getRenderer(),posI.x,posI.y,posI.x+dir.x*distance,posI.y+dir.y*distance);
 	float currentdistance = 0;
 	Vector2D currentPos = posI;
 	bool collisionFound = false;

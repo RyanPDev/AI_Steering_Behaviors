@@ -1,4 +1,4 @@
-# AI_Steering_Behaviors & Flocking
+# AI_Steering_Behaviors & Flocking Showcase
 
 Run solution in x86 format.
 
